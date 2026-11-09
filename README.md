@@ -49,7 +49,7 @@ Once the domain is live, update these URLs in the app's `lib/config.ts`:
 ## Before launch
 
 - [x] `SITE_URL` is `https://leucyapp.com`, and the `CNAME` file tells GitHub Pages to serve that domain.
-- [ ] Confirm `support@dosely.app` receives mail, or change `SUPPORT_EMAIL` and `PRIVACY_EMAIL`.
+- [ ] The contact email is a personal Gmail for now. Switch `SUPPORT_EMAIL` and `PRIVACY_EMAIL` to a domain address such as support@leucyapp.com when it exists.
 - [ ] Add your legal business name and mailing address to the Privacy Policy and Terms if you have a company. Some laws, including GDPR, expect them.
 - [ ] Confirm Delaware as the governing law in the Terms, or change it to your state.
 - [ ] Confirm the retention periods in the Privacy Policy (24 months for analytics, support email and inactive accounts) match how you configure PostHog and Supabase.
