@@ -17,12 +17,12 @@ nav: privacy
     <div class="summary">
       <h2>The short version</h2>
       <ul>
-        <li>What you log in the App is stored on your device. You do not need an account.</li>
+        <li>What you log in the App is stored on your device. An account is optional.</li>
         <li>Meal and menu photos, and messages to the food coach, are sent to our servers only to get an answer from an AI model. We do not store them.</li>
-        <li>If you turn on backup, we store a copy of your meals, doses, side effects and weights in your private cloud account. Photos are never backed up.</li>
+        <li>If you create an account (with Apple, Google or an email and password), we back up your meals, doses, side effects, weights and settings so you can restore them on a new phone. Photos are never backed up.</li>
         <li>We do not sell your data, share it for advertising or show ads.</li>
         <li>Apple Health data never leaves your device.</li>
-        <li>You can export or delete your data at any time.</li>
+        <li>You can export your data, or delete it and your account, at any time in the App.</li>
       </ul>
     </div>
 
@@ -70,18 +70,25 @@ nav: privacy
     <p>When you use the food coach, we send your recent messages in that conversation, your daily protein target, the protein you have logged today and, if you have logged one, the name of your most noticeable recent side effect. They go through our server to Anthropic to generate a reply. We do not store coach conversations on our servers. Please do not include your name or other identifying details in coach messages.</p>
     <p>Anthropic processes this data to provide the service to us. Under its commercial terms it does not use our API data to train its models, and it may keep inputs and outputs for a limited period for safety and abuse monitoring before deleting them.</p>
 
-    <h3>Backup and sync (optional)</h3>
-    <p>Backup is off unless you turn it on. If you sign in with Apple to back up your data, we receive an Apple account identifier and the email address Apple shares, which may be a private relay address if you choose "Hide My Email". We then store copies of these records in your account:</p>
+    <h3>Accounts, backup and sync (optional)</h3>
+    <p>You can use the App without an account. If you create one, you sign in with Apple, with Google, or with an email address and password, and the App then backs up your data automatically. Depending on how you sign in, we receive:</p>
+    <ul>
+      <li><strong>Sign in with Apple:</strong> an Apple account identifier and the email address Apple shares, which may be a private relay address if you choose "Hide My Email".</li>
+      <li><strong>Sign in with Google:</strong> a Google account identifier, your email address, and the name and profile picture link Google shares.</li>
+      <li><strong>Email and password:</strong> your email address and your password, which is stored only as a secure hash. We email you to confirm your address and when you ask to reset your password.</li>
+    </ul>
+    <p>While you are signed in, we store copies of these records in your account:</p>
     <ul>
       <li>Meals: name, time, calories, protein, carbs, fat, fiber, confidence, portion and how it was logged.</li>
       <li>Doses: medication, dose amount, time, injection site and note.</li>
       <li>Side effects: type, severity, note and hours since your last dose.</li>
       <li>Weights: value, time and source.</li>
+      <li>Settings: your medications and schedule, goals and targets, reminders, units, appearance, your setup answers (such as height, weight, goal weight, birth month and year, and gender) and the date you gave health-data consent.</li>
     </ul>
-    <p>Photos are never backed up. Your records are stored with Supabase in the United States, encrypted at rest and in transit, and protected by row-level security so that only your signed-in account can read them. You can turn sync off or sign out at any time in Profile.</p>
+    <p>Photos are never backed up. Your records are stored with Supabase in the United States, encrypted at rest and in transit, and protected by row-level security so that only your signed-in account can read them. In Profile, under Account and backup, you can turn automatic backup off, sign out, or delete your account.</p>
 
     <h3>Purchases</h3>
-    <p>Subscriptions are sold and billed by Apple. We use RevenueCat to check whether your subscription is active. RevenueCat receives an anonymous app user ID, your purchase and subscription history, the App Store country and basic device and app information. We never receive your payment card details.</p>
+    <p>Subscriptions are sold and billed by Apple. We use RevenueCat to check whether your subscription is active. RevenueCat receives an app user ID (a random identifier, or your account's random ID while you are signed in, so a subscription can follow your account to a new phone), your purchase and subscription history, the App Store country and basic device and app information. It does not receive your email address. We never receive your payment card details.</p>
 
     <h3>Product analytics</h3>
     <p>We use PostHog to understand how the App is used so we can improve it. We send event names, such as an onboarding screen being viewed, the paywall being shown, a trial starting, a scan finishing or a dose being logged, together with a random identifier stored on your device and the App version. For scans we include the input type, such as photo or barcode, and the confidence score. <strong>We never send health values, food names, weights, doses, side effects or photos to analytics.</strong> Like any internet service, PostHog receives your IP address when an event is sent, which may be used to estimate your approximate location.</p>
@@ -117,7 +124,7 @@ nav: privacy
     <h2 id="legal-bases">5. Legal bases (EEA and UK)</h2>
     <p>If you are in the European Economic Area or the United Kingdom, we rely on these legal bases:</p>
     <ul>
-      <li><strong>Explicit consent</strong> for health data, which you give during setup and again when you connect Apple Health or turn on backup. You can withdraw consent at any time.</li>
+      <li><strong>Explicit consent</strong> for health data, which you give during setup and again when you connect Apple Health or create an account. You can withdraw consent at any time.</li>
       <li><strong>Performance of a contract</strong> to provide the App and your subscription.</li>
       <li><strong>Legitimate interests</strong> in keeping the App secure and understanding usage through limited analytics that contain no health data. You can object at any time.</li>
       <li><strong>Legal obligation</strong> where the law requires us to keep or disclose information.</li>
@@ -128,11 +135,12 @@ nav: privacy
     <div class="table-wrap"><table>
       <thead><tr><th>Provider</th><th>Purpose</th><th>Data involved</th></tr></thead>
       <tbody>
-        <tr><td>Supabase</td><td>Scan and coach servers, sign-in and optional backup</td><td>Scan and coach requests in transit; backup records and account identifier if you opt in</td></tr>
+        <tr><td>Supabase</td><td>Scan and coach servers, accounts, sign-in emails and backup</td><td>Scan and coach requests in transit; if you create an account, your email address, sign-in identifiers and backed-up records</td></tr>
         <tr><td>Anthropic</td><td>AI model for meal scans, menu scans and the food coach</td><td>Meal or menu photos, typed meals, coach messages and the context listed above</td></tr>
         <tr><td>Open Food Facts</td><td>Barcode lookups</td><td>The barcode number only</td></tr>
         <tr><td>Apple</td><td>App distribution, payments, Sign in with Apple</td><td>Purchase and account data, under Apple's privacy policy</td></tr>
-        <tr><td>RevenueCat</td><td>Subscription status</td><td>Anonymous app user ID and purchase history</td></tr>
+        <tr><td>Google</td><td>Sign in with Google, if you choose it</td><td>Your Google account identifier, email address, name and profile picture link, under Google's privacy policy</td></tr>
+        <tr><td>RevenueCat</td><td>Subscription status</td><td>App user ID (random, or your account's random ID when signed in) and purchase history</td></tr>
         <tr><td>PostHog</td><td>Product analytics</td><td>Event names, random identifier, App version, IP address</td></tr>
         <tr><td>Our email provider</td><td>Support</td><td>Messages you send us</td></tr>
       </tbody>
@@ -154,7 +162,7 @@ nav: privacy
       <tbody>
         <tr><td>Data on your device</td><td>Until you delete it in the App or delete the App.</td></tr>
         <tr><td>Meal photos, typed meals and coach messages on our servers</td><td>Not stored. Processed only for the time it takes to return a result.</td></tr>
-        <tr><td>Backup records and account</td><td>Until you delete them or ask us to. If an account is inactive for 24 months, we may delete it after notice to the email on file.</td></tr>
+        <tr><td>Backup records and account</td><td>Until you delete your account in the App or ask us to. Deleting it removes the account and every backed-up record from our database straight away; copies in our hosting provider's encrypted backups are overwritten within 7 days. If an account is inactive for 24 months, we may delete it after notice to the email on file.</td></tr>
         <tr><td>Analytics events</td><td>Up to 24 months.</td></tr>
         <tr><td>Support emails</td><td>As long as needed to resolve your request, then up to 24 months.</td></tr>
         <tr><td>Purchase records</td><td>As long as required for tax, accounting and legal purposes.</td></tr>
@@ -168,15 +176,15 @@ nav: privacy
     <ul>
       <li><strong>Export:</strong> in the App, open Profile, then Privacy and data, then Export my data.</li>
       <li><strong>Delete from your device:</strong> Profile, then Privacy and data, then Delete all my data.</li>
-      <li><strong>Delete your backup and account:</strong> follow the steps on our <a href="{{root}}delete-data/">Delete your data</a> page.</li>
+      <li><strong>Delete your account and backup:</strong> in the App, open Profile, then Account and backup, then Delete account. Other ways are on our <a href="{{root}}delete-data/">Delete your data</a> page.</li>
       <li><strong>Withdraw consent:</strong> turn off Apple Health or backup in Profile, or revoke permissions in iPhone Settings.</li>
       <li><strong>Notifications:</strong> change reminders in Profile or turn notifications off in iPhone Settings.</li>
     </ul>
-    <p>Depending on where you live, you may also have the right to access, correct, delete or port your personal information, to object to or restrict certain processing, and to withdraw consent. To make a request, email <a href="mailto:{{privacy_email}}">{{privacy_email}}</a>. We may need to verify your request, for example by asking you to write from the email linked to your backup account. We respond within the time the law requires, usually within 30 days, or 45 days under US state laws. You can also complain to your local data protection authority.</p>
+    <p>Depending on where you live, you may also have the right to access, correct, delete or port your personal information, to object to or restrict certain processing, and to withdraw consent. To make a request, email <a href="mailto:{{privacy_email}}">{{privacy_email}}</a>. We may need to verify your request, for example by asking you to write from the email linked to your account. We respond within the time the law requires, usually within 30 days, or 45 days under US state laws. You can also complain to your local data protection authority.</p>
     <p>We will not treat you differently for exercising your privacy rights.</p>
 
     <h2 id="us-states">11. US state privacy rights</h2>
-    <p>Residents of California, Colorado, Connecticut, Virginia, Utah, Texas, Oregon and other states with privacy laws have the rights described above. In the last 12 months we have collected these categories of personal information: identifiers, such as a random app ID and, if you opt in, an Apple account ID and email; commercial information, such as subscription status; internet activity, such as App usage events; approximate location from IP address; and sensitive personal information, namely health data you enter. We use sensitive personal information only to provide the App. We have not sold or shared personal information for cross-context behavioral advertising, and we do not knowingly do so for anyone under 16.</p>
+    <p>Residents of California, Colorado, Connecticut, Virginia, Utah, Texas, Oregon and other states with privacy laws have the rights described above. In the last 12 months we have collected these categories of personal information: identifiers, such as a random app ID and, if you create an account, an account ID, your email address and the sign-in provider you use; commercial information, such as subscription status; internet activity, such as App usage events; approximate location from IP address; and sensitive personal information, namely health data you enter. We use sensitive personal information only to provide the App. We have not sold or shared personal information for cross-context behavioral advertising, and we do not knowingly do so for anyone under 16.</p>
     <p>If you live in Washington, Nevada or Connecticut, please also read our <a href="{{root}}health-data/">Consumer Health Data Notice</a>. You may use an authorized agent to make a request, and you may appeal our decision by replying to our response with the word "Appeal".</p>
 
     <h2 id="transfers">12. International transfers</h2>
