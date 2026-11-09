@@ -21,7 +21,7 @@ SRC = ROOT / "src"
 
 # ---- Site settings. Change these in one place. ----
 SITE_NAME = "Leucy"
-SITE_URL = "https://dosely.app"         # Used for canonical links, the sitemap and social cards. Set to your real domain.
+SITE_URL = "https://leucyapp.com"       # Used for canonical links, the sitemap and social cards.
 SUPPORT_EMAIL = "support@dosely.app"     # Same address the app uses in lib/config.ts.
 PRIVACY_EMAIL = "support@dosely.app"     # Requests about personal data. Can be a separate inbox later.
 APP_STORE_URL = ""                       # Paste the App Store link once the app is live; buttons switch automatically.

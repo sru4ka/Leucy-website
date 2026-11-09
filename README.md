@@ -48,7 +48,7 @@ Once the domain is live, update these URLs in the app's `lib/config.ts`:
 
 ## Before launch
 
-- [ ] Set `SITE_URL` in `tools/build.py` to the real domain. It is `https://dosely.app` for now, matching the App Store listing draft.
+- [x] `SITE_URL` is `https://leucyapp.com`, and the `CNAME` file tells GitHub Pages to serve that domain.
 - [ ] Confirm `support@dosely.app` receives mail, or change `SUPPORT_EMAIL` and `PRIVACY_EMAIL`.
 - [ ] Add your legal business name and mailing address to the Privacy Policy and Terms if you have a company. Some laws, including GDPR, expect them.
 - [ ] Confirm Delaware as the governing law in the Terms, or change it to your state.
