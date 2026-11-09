@@ -29,6 +29,7 @@ EFFECTIVE_DATE = "November 9, 2026"
 # ----------------------------------------------------
 
 NAV = [
+    ("screens", "Screens", "#screens"),
     ("features", "Features", "#features"),
     ("pricing", "Pricing", "#pricing"),
     ("privacy-home", "Privacy", "#privacy"),

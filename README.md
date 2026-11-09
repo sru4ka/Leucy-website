@@ -58,4 +58,6 @@ Once the domain is live, update these URLs in the app's `lib/config.ts`:
 - [ ] Paste the App Store link into `APP_STORE_URL` once the app is approved.
 - [ ] Have a lawyer review the policies. They were written to match how the app works, but they are not legal advice.
 
+App screenshots in `assets/img/app/` are real screens from the Leucy app, captured with sample data. Food and lifestyle photos come from the app's own assets.
+
 Fonts: Fraunces and Inter, both under the SIL Open Font License (see `assets/fonts/`).
